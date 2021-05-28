@@ -26,10 +26,10 @@ async function fetchData(req){
       resolve(o)
     }
     
-    if(qLimit == null || qLimit == ""){
+    if(qLimit == null || qLimit == "" || parseInt(qLimit) < 0){
       qLimit = 999999;
     }
-    if(qOffset ==null || qOffset == "" ){
+    if(qOffset ==null || qOffset == "" || parseInt(qOffset) < 0){
       qOffset = 0;
     }
     
