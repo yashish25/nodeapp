@@ -21,11 +21,6 @@ app.use('/', [
     require('./routes/matches')
 ]);
 
-app.get('/test', function (req, res) {
-    res.send(`<h1>hello world<h1>`)
-  })
-
-
 
 app.listen(port, () => {
     console.log(`Listening at http://localhost:${port}`);
