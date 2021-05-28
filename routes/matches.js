@@ -27,10 +27,10 @@ async function fetchData(req){
             resolve(obj)
         }
         
-        if(qLimit == null || qLimit == ""){
+        if(qLimit == null || qLimit == "" || parseInt(qLimit) < 0){
             qLimit = 999999;
         }
-        if(qOffset ==null || qOffset == ""){
+        if(qOffset ==null || qOffset == "" || parseInt(qOffset) < 0){
             qOffset = 0;
         }
         let sql = `SELECT * FROM branches WHERE (branch ILIKE '${'%'+req.query.q+'%'}' OR city ILIKE '${'%'+req.query.q+'%'}'
